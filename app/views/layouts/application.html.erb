@@ -12,7 +12,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="container my-3">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
