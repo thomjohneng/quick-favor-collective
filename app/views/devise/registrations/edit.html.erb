@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit Account</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -17,8 +17,14 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :story, placeholder: "E.g. ..." %>
+    <%= f.input :city %>
+    <%= f.input :industry %>
+    <%= f.input :linkedin %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "We need your current password to confirm your changes.",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>

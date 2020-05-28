@@ -1,9 +1,9 @@
 <h1>Request a Favor</h1>
 
 <%= simple_form_for [current_user, @favor] do |f| %>
-  <%= f.input :favor, label: 'What favor would you like to request?', placeholder: "E.g. ..." %>
-  <%= f.input :details, placeholder: "E.g. ..." %>
-  <%= f.input :significance, label: 'Why is this important to you?', placeholder: "E.g. ..." %>
+  <%= f.input :favor, label: 'What favor would you like to request?', placeholder: "E.g. Please like and share my new YouTube video!" %>
+  <%= f.input :significance, label: 'Why is this important to you?', placeholder: "E.g. Trying to spread awareness for environmental sustainability" %>
+  <%= f.input :details, label: "What exactly do people need to do?", placeholder: "E.g. This video contains tips for simple behavior changes for a healthier world. Would appreciate if you could like, share, forward, etc. the link below." %>
   <%= f.input :link, label: 'Any links you want to share?', placeholder: "www.youtube.com/videotoshare" %>
   <%= f.button :submit %>
 <% end %>

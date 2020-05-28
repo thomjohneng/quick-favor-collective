@@ -6,10 +6,15 @@ class ApplicationController < ActionController::Base
     favors_path
   end
 
+  def after_sign_out_path_for(user)
+    root_path
+  end
+
   protected
 
+
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :story, :city, :industry])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :story, :city, :industry])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :story, :city, :industry, :admin, :linkedin, :referrer])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :story, :city, :industry, :admin, :linkedin])
     end
 end

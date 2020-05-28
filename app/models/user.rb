@@ -9,6 +9,9 @@ class User < ApplicationRecord
   validates :story, presence: true
   validates :city, presence: true
   validates :industry, presence: true
+  validates :linkedin, presence: true
+  validates :referrer, presence: true
 
   has_many :favors
+  has_many :referrals
 end

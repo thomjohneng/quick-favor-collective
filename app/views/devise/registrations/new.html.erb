@@ -15,11 +15,15 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :story, placeholder: "E.g. ..." %>
     <%= f.input :city %>
     <%= f.input :industry %>
+    <%= f.input :linkedin %>
+
+    <%= f.input :referrer, label: "Who invited you to the collective?", hint: "Please write his or her full name." %>
   </div>
 
   <div class="form-actions">

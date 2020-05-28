@@ -1,7 +1,6 @@
-<% if user_signed_in? %>
-  <h1>Welcome to the Quick Favor Collective!</h1>
+<h1>Welcome to the Quick Favor Collective!</h1>
 
-  <%= link_to "Request a Favor!", new_user_favor_path(current_user) %>
-<% else %>
-  <h1>Welcome to the Quick Favor Collective!</h1>
-<% end %>
+<p>We’re a close community of passionate do’ers looking to help each other out with quick favors!</p>
+
+<%= link_to "Login", new_user_session_path %>
+<%= link_to "Join Us", new_user_registration_path %>
