@@ -14,8 +14,8 @@ User.create(
   story: "Passionate about social impact, technology, and storytelling. Currently building Origo Edu, a college admissions consultancy supporting families across SEA. Proud Cal bear and ex-consultant at Kearney.",
   city: "Singapore",
   industry: "Education",
-  linkedin: "https://www.linkedin.com/in/amandalng"
-  referrer: "Thomas Eng"
+  linkedin: "https://www.linkedin.com/in/amandalng",
+  referrer: "Thomas Eng",
 
   admin: true,
   verified: true
@@ -29,8 +29,8 @@ User.create(
   story: "Expat living the Indonesian dream. Works to make education more accessible among Indonesian masses. Eats and sleeps often. Ex-consultant at Kearney.",
   city: "Jakarta",
   industry: "Education",
-  linkedin: "https://www.linkedin.com/in/thomeng"
-  referrer: "Amanda Ng"
+  linkedin: "https://www.linkedin.com/in/thomeng",
+  referrer: "Amanda Ng",
 
   admin: true,
   verified: true
