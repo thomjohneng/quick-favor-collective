@@ -10,7 +10,6 @@
       <th scope="col">Email</th>
       <th scope="col">City</th>
       <th scope="col">Industry</th>
-      <th scope="col">Referred by</th>
       <th scope="col">Verified</th>
     </tr>
   </thead>
@@ -34,12 +33,12 @@
           <td><%= user.email %></td>
           <td><%= user.city %></td>
           <td><%= user.industry %></td>
-          <td><%= user.referrer %></td>
           <td>
             <% if user.verified == true %>
               <i class="fas fa-check"></i>
             <% else %>
-              <%= link_to "Verify", "#" %>
+              <%= link_to "Verify", edit_user_registration_path(user) %>
+              <p class="my-0">(referred by <%= user.referrer %>)</p>
             <% end %>
           </td>
         </tr>

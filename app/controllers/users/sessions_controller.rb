@@ -26,6 +26,10 @@ class Users::SessionsController < Devise::SessionsController
     @user = User.find(params[:id])
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

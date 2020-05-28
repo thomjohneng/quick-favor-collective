@@ -10,5 +10,5 @@
 <p><strong>Referred by</strong>: <%= @user.referrer %></p>
 
 <% if @user == current_user %>
-  <%= link_to "Edit Profile", "#" %>
+  <%= link_to "Edit Profile", edit_user_registration_path(@user) %>
 <% end %>
