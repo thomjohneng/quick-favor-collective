@@ -1,6 +1,10 @@
-<h1>Welcome to the Quick Favor Collective!</h1>
+<h1 class="text-center mb-4">Welcome to the Quick Favor Collective!</h1>
 
-<p>We’re a close community of passionate do’ers looking to help each other out with quick favors!</p>
+<p class="text-center">We’re a close community of passionate do’ers looking to help each other out with quick favors! <%= link_to "Learn more.", about_path %></p>
 
-<%= link_to "Login", new_user_session_path %>
-<%= link_to "Join Us", new_user_registration_path %>
+<div class="center my-4">
+  <div>
+   <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+   <%= link_to "Join Us", join_path, class: "btn btn-primary"  %>
+  </div>
+</div>

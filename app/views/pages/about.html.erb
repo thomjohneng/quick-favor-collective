@@ -1,0 +1,21 @@
+<h2 class="mb-4 text-center">Welcome to the Quick Favor Collective!</h2>
+
+<h3 class="mb-4 text-center">Who We Are</h3>
+
+<p class="my-1 text-center">We’re a close community of passionate do’ers looking to help each other out with quick favors!</p>
+
+<h3 class="my-4 text-center">How We Work</h3>
+
+<ul>
+  <li>Reciprocation is a core value to us - please aim to complete favors for others</li>
+  <li>All favors should be quick to fulfill & can be done from a computer or mobile device</li>
+  <li>Favors you request will be sent to all members via email, and posted online for a week. To minimize spam, please wait 2 days before making a new favor request if you've just received one from someone else!</li>
+</ul>
+
+<div class="center mt-5">
+  <% if user_signed_in? %>
+    <%= link_to "Have a potential member in mind?", new_user_referral_path(current_user), class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to "Want to join?", join_path, class: "btn btn-primary" %>
+  <% end %>
+</div>

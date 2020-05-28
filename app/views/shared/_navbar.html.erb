@@ -1,7 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+  <% if user_signed_in? %>
+    <%= link_to "Quick Favor Collective", favors_path %>
+  <% else %>
+    <%= link_to "Quick Favor Collective", root_path %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,7 +24,7 @@
             <%= link_to "Invite a Friend", new_user_referral_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "About Us", "#", class: "nav-link" %>
+            <%= link_to "About Us", about_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://www.greenecountyfoundation.org/wp-content/uploads/2019/09/Profile-Icon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -36,12 +38,15 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "About Us", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to "About", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% end %>
       <% else %>
         <li class="nav-item">
-          <%= link_to "About Us", "#", class: "nav-link" %>
+          <%= link_to "About", about_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

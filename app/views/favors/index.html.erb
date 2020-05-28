@@ -1,22 +1,25 @@
 <% if current_user.verified == true %>
-  <h1 class="text-center mb-4">Favors in the Community</h1>
+  <h1 class="text-center mb-4">Current Favors</h1>
 
   <% @favors.each do |favor| %>
-    <div class="favor-container">
-      <p><strong>Favor:</strong> <%= favor.favor %></p>
-      <p><strong>Significance:</strong> <%= favor.significance %></p>
-      <p><strong>Details:</strong> <%= favor.details %></p>
-      <% if favor.link.present? %>
-        <p><strong>Link:</strong> <%= favor.link %></p>
-      <% end %>
-      <p><strong>Posted by:</strong>
-        <% if favor.user == current_user %>
-          You :)
-        <% else %>
-          <%= favor.user.first_name %> <%= favor.user.last_name %> (<%= favor.user.email %>)</p>
+    <% if favor.end_date >= Date.today %>
+      <div class="favor-container">
+        <p><strong>Favor:</strong> <%= favor.favor %></p>
+        <p><strong>Significance:</strong> <%= favor.significance %></p>
+        <p><strong>Details:</strong> <%= favor.details %></p>
+        <% if favor.link.present? %>
+          <p><strong>Link:</strong> <a href=<%= favor.link %>>
+          <%= favor.link %></a></p>
         <% end %>
-    </div>
+        <p><strong>Posted by:</strong>
+          <% if favor.user == current_user %>
+            You &#128123;</p>
+          <% else %>
+            <%= link_to favor.user.first_name, user_path(favor.user) %></p>
+          <% end %>
+      </div>
+    <% end %>
   <% end %>
 <% else %>
-  <h3>Be patient with us! Your registration is being verified :)</h3>
+  <h3>Be patient with us! Your registration is being verified &#128522;</h3>
 <% end %>

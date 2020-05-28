@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2 class="mb-4 text center">Join the Collective</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -26,9 +26,11 @@
     <%= f.input :referrer, label: "Who invited you to the collective?", hint: "Please write his or her full name." %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions center">
+    <%= f.button :submit, "Sign up", class: "btn btn-primary my-4" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="center">
+  <%= render "devise/shared/links" %>
+</div>

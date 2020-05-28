@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     resources :referrals, only: [ :new, :create, :show ]
   end
   resources :favors, only: [ :index, :show ]
+  get '/about', to: 'pages#about'
+  get '/join', to: 'pages#join'
 end

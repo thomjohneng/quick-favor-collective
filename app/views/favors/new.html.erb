@@ -1,9 +1,14 @@
-<h1>Request a Favor</h1>
+<h2 class="mb-4 text-center">Request a Favor</h2>
 
 <%= simple_form_for [current_user, @favor] do |f| %>
-  <%= f.input :favor, label: 'What favor would you like to request?', placeholder: "E.g. Please like and share my new YouTube video!" %>
-  <%= f.input :significance, label: 'Why is this important to you?', placeholder: "E.g. Trying to spread awareness for environmental sustainability" %>
-  <%= f.input :details, label: "What exactly do people need to do?", placeholder: "E.g. This video contains tips for simple behavior changes for a healthier world. Would appreciate if you could like, share, forward, etc. the link below." %>
+  <%= f.input :favor, label: 'What favor would you like to request?', placeholder: "E.g. Please like and share my new YouTube video!", :as => :text, :input_html => { 'rows' => 3} %>
+  <%= f.input :significance, label: 'Why is this important to you?', placeholder: "E.g. Trying to spread awareness for environmental sustainability", :as => :text, :input_html => { 'rows' => 3} %>
+  <%= f.input :details, label: "What exactly do people need to do?", placeholder: "E.g. This video contains tips for simple behavior changes for a healthier world. Would appreciate if you could like, share, forward, etc. the link below.", :as => :text, :input_html => { 'rows' => 5} %>
   <%= f.input :link, label: 'Any links you want to share?', placeholder: "www.youtube.com/videotoshare" %>
-  <%= f.button :submit %>
+
+  <div class="center">
+    <%= f.button :submit, 'Submit', class: "btn btn-primary my-4" %>
+  </div>
 <% end %>
+
+<%= link_to "< back", :back %>
