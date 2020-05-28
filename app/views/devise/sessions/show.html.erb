@@ -1,0 +1,14 @@
+<h1>Profile: <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<p><strong>Full name</strong>: <%= @user.first_name %> <%= @user.last_name %></p>
+<p><strong>City</strong>: <%= @user.city %></p>
+<p><strong>Industry</strong>: <%= @user.industry%></p>
+<p><strong>Story</strong>: <%= @user.story %></p>
+
+<p><strong>LinkedIn</strong>: <%= @user.linkedin %></p>
+
+<p><strong>Referred by</strong>: <%= @user.referrer %></p>
+
+<% if @user == current_user %>
+  <%= link_to "Edit Profile", "#" %>
+<% end %>
