@@ -11,9 +11,9 @@
   <p class="mb-0"><i class="fas fa-envelope"></i>  <%= @user.email %></p>
 <% end %>
 
-<% if current_user.linkedin.present? %>
-  <p class="mt-0"><i class="fab fa-linkedin"></i>  <a href=<%= @user.linkedin %> target="_blank"><%= @user.linkedin %></a></p>
-<% end %>
+<%# if current_user.linkedin.present? %>
+  <p class="mt-0"><i class="fab fa-linkedin"></i> <a href=<%= @user.linkedin %> target="_blank">See Profile</a></p>
+<%# end %>
 
 <% if current_user.admin == true %>
   <p><strong>Referred by</strong>: <%= @user.referrer %></p>
