@@ -1,5 +1,6 @@
 <% if current_user.verified == true %>
-  <h2 class="text-center mb-4">&#128588; Current Favors &#128588;</h2>
+  <h2 class="text-center mb-2">&#128588; Current Favors &#128588;</h2>
+  <h6 class="mt-0 mb-4 text-center">Favors will remain online for one week.</h6>
 
   <% @favors.each do |favor| %>
     <% if favor.end_date >= Date.today %>
