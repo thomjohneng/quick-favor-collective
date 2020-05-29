@@ -19,6 +19,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def index
+    @unhide_referralnavbar = true
     @users = User.all.all.sort_by &:first_name
   end
 

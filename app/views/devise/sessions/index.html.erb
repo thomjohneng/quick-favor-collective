@@ -1,12 +1,46 @@
 <h2 class="mb-4 text-center">The Collective</h2>
 
+<% if current_user.admin == true %>
+
+<h6 class="text-center my-3"><strong>Unverified Members</strong></h6>
+
 <table class="table text-center">
   <thead class="thead-light">
     <tr>
       <th scope="col"></th>
       <th scope="col">Member</th>
-      <th scope="col">City</th>
-      <th scope="col">Verified</th>
+      <th scope="col">Referrer</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <% if user.verified == false %>
+          <tr>
+            <td>
+              <%= link_to(user_path(user)) do %>
+              <i class="fas fa-info-circle"></i>
+              <% end %>
+            </td>
+            <td><%= user.full_name %></p></td>
+            <td><p><%= user.referrer %></p></td>
+            <td><%= link_to "Verify", "#" %></td>
+          </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<h6 class="text-center my-3"><strong>Verified Members</strong></h6>
+
+<% end %>
+
+<table class="table text-center">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Member</th>
+      <th scope="col">One-liner</th>
     </tr>
   </thead>
   <tbody>
@@ -14,21 +48,19 @@
         <tr>
           <td>
             <%= link_to(user_path(user)) do %>
-              <i class="fas fa-info-circle"></i>
+            <i class="fas fa-info-circle"></i>
             <% end %>
           </td>
-          <td><%= user.first_name %> <%= user.last_name %></td>
-          <td><%= user.city %></td>
           <td>
-            <% if user.verified == true %>
-              <i class="fas fa-check"></i>
-            <% else %>
-            <% end %>
+            <p><%= user.full_name %></p>
+            <p><%= user.city %></p>
           </td>
+          <td><%= user.oneliner %></td>
         </tr>
     <% end %>
   </tbody>
 </table>
+
 
 <% if false %>
 

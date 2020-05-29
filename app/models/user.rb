@@ -6,12 +6,16 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :story, presence: true
   validates :city, presence: true
   validates :industry, presence: true
-  validates :linkedin, presence: true
+  validates :oneliner, presence: true
+  validates :funfact, presence: true
   validates :referrer, presence: true
 
   has_many :favors
   has_many :referrals
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -1,0 +1,16 @@
+<% if @unhide_favornavbar == true %>
+  <div class="bottom-navbar">
+    <div class="center my-3">
+      <%= link_to "Request a Favor", new_user_favor_path(current_user), class: "btn btn-primary btn-block" %>
+    </div>
+  </div>
+<% end %>
+
+
+<% if @unhide_referralnavbar == true %>
+  <div class="bottom-navbar">
+    <div class="center my-3">
+      <%= link_to "Invite a Friend", new_user_referral_path(current_user), class: "btn btn-primary btn-block" %>
+    </div>
+  </div>
+<% end %>

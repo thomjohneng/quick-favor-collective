@@ -1,14 +1,15 @@
 .container {
   margin: 80px auto;
+  margin-bottom: 100px;
 }
 
 .favor-container {
-  border-bottom: .5px solid $gray;
   padding: 8px;
+  border-bottom: .5px solid gray;
 }
 
 .favor-container p {
-  margin: 2px 0;
+  margin: 4px;
 }
 
 .center {

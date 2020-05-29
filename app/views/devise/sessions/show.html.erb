@@ -1,10 +1,13 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h1><%= @user.full_name %></h1>
 
 <p><strong>City</strong>: <%= @user.city %></p>
 <p><strong>Industry</strong>: <%= @user.industry%></p>
-<p><strong>Story</strong>: <%= @user.story %></p>
+<p><strong>One-liner</strong>: <%= @user.oneliner %></p>
+<p><strong>Fun fact</strong>: <%= @user.funfact %></p>
 
-<p class="mb-0"><i class="fas fa-envelope"></i>  <%= @user.email %></p>
+<% if current_user.admin == true %>
+  <p class="mb-0"><i class="fas fa-envelope"></i>  <%= @user.email %></p>
+<% end %>
 <p class="mt-0"><i class="fab fa-linkedin"></i>  <a href=<%= @user.linkedin %> target="_blank"><%= @user.linkedin %></a>
 
 <% if current_user.admin == true %>

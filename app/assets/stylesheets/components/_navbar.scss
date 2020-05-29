@@ -13,3 +13,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.bottom-navbar {
+  justify-content: space-between;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 16px;
+}

@@ -7,6 +7,22 @@
         <p><strong>Favor:</strong> <%= favor.favor %></p>
         <p><strong>Significance:</strong> <%= favor.significance %></p>
         <p><strong>Details:</strong> <%= favor.details %></p>
+        <% if favor.user == current_user %>
+          <p><strong>Posted by:</strong> You &#128123;</p>
+        <% else %>
+          <p><strong>Posted by:</strong> <%= link_to favor.user.full_name, user_path(favor.user) %> (<%= favor.user.city %>)</p>
+          <p><strong>Quick background:</strong> <%= favor.introduction %></p>
+          <p><strong>Fun fact:</strong> <%= favor.user.funfact %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if false %>
+    <% if favor.end_date >= Date.today %>
+      <div class="favor-container">
+        <p><strong>Favor:</strong> <%= favor.favor %></p>
+        <p><strong>Significance:</strong> <%= favor.significance %></p>
+        <p><strong>Details:</strong> <%= favor.details %></p>
         <% if favor.link.present? %>
           <p><strong>Link:</strong> <a href=<%= favor.link %>>
           <%= favor.link %></a></p>
@@ -15,11 +31,13 @@
           <% if favor.user == current_user %>
             You &#128123;</p>
           <% else %>
-            <%= link_to favor.user.first_name, user_path(favor.user) %></p>
+            <%= link_to favor.user.full_name, user_path(favor.user) %> (<%= favor.user.city %>)</p>
           <% end %>
       </div>
     <% end %>
+    <% end %>
   <% end %>
+
 <% else %>
   <h3>Be patient with us! Your registration is being verified &#128522;</h3>
 <% end %>

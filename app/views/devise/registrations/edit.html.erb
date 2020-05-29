@@ -21,10 +21,11 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :story, placeholder: "E.g. ...", :as => :text, :input_html => { 'rows' => 10} %>
     <%= f.input :city %>
     <%= f.input :industry %>
     <%= f.input :linkedin %>
+    <%= f.input :oneliner, label: "One-liner", :as => :text, :input_html => { 'rows' => 3} %>
+    <%= f.input :funfact, label: "Fun fact", :as => :text, :input_html => { 'rows' => 3} %>
     <%= f.input :current_password,
                 hint: "We need your current password to confirm your changes.",
                 required: true,
