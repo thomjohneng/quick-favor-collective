@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   has_many :favors
   has_many :referrals
+  has_one_attached :photo
 
   def full_name
     "#{first_name} #{last_name}"

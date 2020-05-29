@@ -1,5 +1,10 @@
 <div class="profile-container">
 
+<div class="center mb-3">
+  <% if @user.photo %>
+    <%= cl_image_tag @user.photo.key, height: 80, width: 80, crop: :fill %>
+  <% end %>
+</div>
 <h2 class="mb-3 text-center"><%= @user.full_name %></h2>
 
 <p><strong>City</strong>: <%= @user.city %></p>
