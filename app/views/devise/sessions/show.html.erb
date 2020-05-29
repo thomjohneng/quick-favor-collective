@@ -1,4 +1,6 @@
-<h1><%= @user.full_name %></h1>
+<div class="profile-container">
+
+<h2 class="mb-3 text-center"><%= @user.full_name %></h2>
 
 <p><strong>City</strong>: <%= @user.city %></p>
 <p><strong>Industry</strong>: <%= @user.industry%></p>
@@ -15,13 +17,20 @@
 
 <% if current_user.admin == true %>
   <p><strong>Referred by</strong>: <%= @user.referrer %></p>
+
+  <p><strong>Status</strong>:
+    <% if @user.verified == true %>
+      Verified Member
+    <% else %>
+      Unverified Applicant <i class="fas fa-exclamation-circle"></i>
+    <% end %>
+  </p>
 <% end %>
 
 <% if @user == current_user %>
   <%= link_to "Edit Profile", edit_user_registration_path(@user) %>
 <% end %>
 
-<br>
-<br>
+</div>
 
 <%= link_to "< back", :back %>

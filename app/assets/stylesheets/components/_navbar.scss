@@ -4,6 +4,8 @@
   position: fixed;
   top: 0;
   width: 100%;
+  box-shadow: 0 0 2px #888888;
+  z-index: 9999;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,4 +23,6 @@
   bottom: 0;
   width: 100%;
   padding: 0 16px;
+  box-shadow: 0 0 2px #888888;
+  z-index: 9999;
 }
