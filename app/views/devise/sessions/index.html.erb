@@ -35,7 +35,30 @@
 
 <% end %>
 
-<table class="table text-center align-middle">
+<p class="text-center">Search by...</p>
+<div class="dropdown">
+  <button class="btn btn-secondary btn-block my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    City
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% @cities.each do |city| %>
+      <a class="dropdown-item"><%= city %></a>
+    <% end %>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary btn-block mb-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Industry
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% @industries.each do |industry| %>
+      <a class="dropdown-item"><%= industry %></a>
+    <% end %>
+  </div>
+</div>
+
+<table class="table text-center align-middle" id="userTable">
   <thead class="thead-light">
     <tr>
       <th scope="col"></th>
@@ -46,15 +69,15 @@
   <tbody>
     <% @users.each do |user| %>
       <% if user.verified == true %>
-        <tr>
+        <tr class="userRow">
           <td>
             <%= link_to(user_path(user)) do %>
             <i class="fas fa-info-circle"></i>
             <% end %>
           </td>
-          <td>
-            <p><%= user.full_name %></p>
-            <p><%= user.city %></p>
+          <td class="city-industry">
+            <p><strong><%= user.full_name %></strong></p>
+            <p><%= user.city %>, <%= user.industry %></p>
           </td>
           <td><%= user.oneliner %></td>
         </tr>
@@ -105,3 +128,5 @@
 </table>
 
 <% end %>
+
+<%= javascript_pack_tag "dropdown" %>

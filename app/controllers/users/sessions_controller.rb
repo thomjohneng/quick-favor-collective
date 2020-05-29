@@ -21,6 +21,20 @@ class Users::SessionsController < Devise::SessionsController
   def index
     @unhide_referralnavbar = true
     @users = User.all.all.sort_by &:first_name
+
+    @industries = []
+    User.all.each do |user|
+      if @industries.include?(user.industry) == false
+        @industries << user.industry
+      end
+    end
+
+    @cities = []
+    User.all.each do |user|
+      if @cities.include?(user.city) == false
+        @cities << user.city
+      end
+    end
   end
 
   def show
