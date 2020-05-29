@@ -6,12 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroying seeds..."
+
+Referral.destroy_all
+Favor.destroy_all
+User.destroy_all
+
+puts "Creating users..."
+
 User.create(
   email: "amandaleahng@gmail.com",
   password: "password",
   first_name: "Amanda",
   last_name: "Ng",
-  story: "Passionate about social impact, technology, and storytelling. Currently building Origo Edu, a college admissions consultancy supporting families across SEA. Proud Cal bear and ex-consultant at Kearney.",
+  oneliner: "Building Origo Edu, college admissions consultancy",
+  funfact: "Hates coffee, loves coffee ice cream",
   city: "Singapore",
   industry: "Education",
   linkedin: "https://www.linkedin.com/in/amandalng",
@@ -22,11 +31,42 @@ User.create(
   )
 
 User.create(
+  email: "carolyn@gmail.com",
+  password: "password",
+  first_name: "Carolyn",
+  last_name: "Marsing",
+  oneliner: "Passionate about shipping and negotiating with pirates. Voracious reader and proud Cal grad!",
+  funfact: "Loves people who are con-si-de-rate",
+  city: "Jakarta",
+  industry: "Shipping",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
+  email: "glenys@gmail.com",
+  password: "password",
+  first_name: "Glenys",
+  last_name: "Kirana",
+  oneliner: "Works to make air travel across SE Asia affordable and accessible for all!",
+  funfact: "Twins with Amanda Ng",
+  city: "Jakarta",
+  industry: "Travel",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: false
+  )
+
+User.create(
   email: "tomeng728@gmail.com",
   password: "password",
   first_name: "Thomas",
   last_name: "Eng",
-  story: "Expat living the Indonesian dream. Works to make education more accessible among Indonesian masses. Eats and sleeps often. Ex-consultant at Kearney.",
+  oneliner: "Recently moved to Jakarta from New York to help build Zenius Education across Indonesia",
+  funfact: "Often models hair after Avatar character Sokka",
   city: "Jakarta",
   industry: "Education",
   linkedin: "https://www.linkedin.com/in/thomeng",
@@ -34,4 +74,35 @@ User.create(
 
   admin: true,
   verified: true
+  )
+
+puts "Creating favors..."
+
+Favor.create(
+  favor: "Looking for cool education-/food-/sustainability-related nonprofits in Southeast Asia to support/partner with!",
+  significance: "I'm running a social enterprise/project selling shirts to raise awareness for and financially support impactful nonprofits in the region.",
+  details: "If you know of or are in contact with any interesting nonprofits (looking for something smaller than the UNICEFs of the world) that work to solve issues in the education, food, or sustainability space, please share the name of the organization and any other details you are comfortable sharing. Even better would be an introduction to someone working there :)",
+
+  introduction: "Building Origo Edu, college admissions consultancy in Southeast Asia",
+  user: User.first
+  )
+
+Favor.create(
+  favor: "Please like and share my new YouTube video on how to nail your college essay!",
+  significance: "My education consultancy is aiming to make higher education in the US/CA/UK more accessible to students/families in Indonesia - of course, this includes writing a killer essay to get into a great school, so wanted to share some advice on how to get started!",
+  details: "I've provided a youtube link below to the video itself - feel free to like, share, forward, circulate to students, parents, educators, etc. to whom this might be relevant and helpful. If you think I can help beyond this video, also happy to chat directly!",
+  link: "www.youtube.com/12345678",
+
+  introduction: "Building Origo Edu, college admissions consultancy in Southeast Asia",
+  user: User.first
+  )
+
+Favor.create(
+  favor: "Can you introduce me to anyone in edtech in Southeast Asia / Indonesia?",
+  significance: "New in the region and industry and was hoping to better understand the edtech landscape in Southeast Asia",
+  details: "If you know anyone who is or has worked in the education startup industry, especially in Indonesia, would appreciate a quick introduction. Feel free to share my LinkedIn profile with them!",
+  link: "www.linkedin.com/12345678",
+
+  introduction: "Recently moved to Jakarta from New York to help build Zenius Education across Indonesia",
+  user: User.last
   )

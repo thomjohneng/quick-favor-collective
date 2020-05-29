@@ -7,6 +7,10 @@
         <p><strong>Favor:</strong> <%= favor.favor %></p>
         <p><strong>Significance:</strong> <%= favor.significance %></p>
         <p><strong>Details:</strong> <%= favor.details %></p>
+        <% if favor.link.present? %>
+          <p><strong>Link:</strong> <a href=<%= favor.link %>>
+          <%= favor.link %></a></p>
+        <% end %>
         <% if favor.user == current_user %>
           <p><strong>Posted by:</strong> You &#128123;</p>
         <% else %>
