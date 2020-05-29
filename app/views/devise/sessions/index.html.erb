@@ -45,6 +45,7 @@
   </thead>
   <tbody>
     <% @users.each do |user| %>
+      <% if user.verified == true %>
         <tr>
           <td>
             <%= link_to(user_path(user)) do %>
@@ -57,6 +58,7 @@
           </td>
           <td><%= user.oneliner %></td>
         </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
