@@ -77,6 +77,22 @@ User.create(
   )
 
 User.create(
+  email: "audie@gmail.com",
+  password: "password",
+  first_name: "Audie",
+  last_name: "Wibowo",
+  oneliner: "Recently transferred from CS Singapore to Hong Kong driving cool internal strategic initiatives",
+  funfact: "Obsessed with other people's dogs (doodles only)",
+  city: "Hong Kong",
+  industry: "Finance",
+  linkedin: "https://www.linkedin.com/in/aedith",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
   email: "chris@gmail.com",
   password: "password",
   first_name: "Chris",
