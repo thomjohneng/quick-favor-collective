@@ -35,28 +35,20 @@
 
 <% end %>
 
-<p class="text-center">Search by...</p>
-<div class="dropdown">
-  <button class="btn btn-secondary btn-block my-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    City
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <% @cities.each do |city| %>
-      <a class="dropdown-item"><%= city %></a>
-    <% end %>
-  </div>
-</div>
+<p class="text-center mb-2">Search by...</p>
+<select id="cities" name="cities" class="btn btn-block btn-secondary">
+  <option> City </option>
+  <% @cities.each do |city| %>
+    <option value= <%= city %>> <%= city %> </option>
+  <% end %>
+</select>
 
-<div class="dropdown">
-  <button class="btn btn-secondary btn-block mb-4 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Industry
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <% @industries.each do |industry| %>
-      <a class="dropdown-item"><%= industry %></a>
-    <% end %>
-  </div>
-</div>
+<select id="industries" name="industries" class="btn btn-block btn-secondary mb-3">
+  <option> Industry </option>
+  <% @industries.each do |industry| %>
+    <option value= <%= industry %>> <%= industry %> </option>
+  <% end %>
+</select>
 
 <table class="table text-center align-middle" id="userTable">
   <thead class="thead-light">
