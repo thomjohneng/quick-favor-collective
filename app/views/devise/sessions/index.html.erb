@@ -5,7 +5,10 @@
 
 <% if current_user.admin == true %>
 
-<h6 class="text-center my-3"><strong>Unverified Members</strong> <i class="fas fa-exclamation-circle"></i></h6>
+<h6 class="text-center mt-3"><strong>Unverified Members</strong> <i class="fas fa-exclamation-circle"></i></h6>
+<div class="center">
+  <%= link_to "See Referrals", referrals_path, class: "mb-3" %>
+</div>
 
 <table class="table text-center align-middle">
   <thead class="thead-light">
@@ -34,7 +37,8 @@
   </tbody>
 </table>
 
-<h6 class="text-center my-3"><strong>Verified Members</strong></h6>
+
+<h6 class="text-center my-2"><strong>Verified Members</strong></h6>
 
 <% end %>
 
@@ -71,8 +75,8 @@
             <% end %>
           </td>
           <td class="city-industry">
-            <p><strong><%= user.full_name %></strong></p>
-            <p><%= user.city %>, <%= user.industry %></p>
+            <p class="mb-2"><strong><%= user.full_name %></strong></p>
+            <p class="city-industry-tag"><%= user.city %>, <%= user.industry %></p>
           </td>
           <td><%= user.oneliner %></td>
         </tr>

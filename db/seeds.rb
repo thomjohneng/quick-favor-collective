@@ -236,3 +236,14 @@ Inquiry.create(
 
   responded: false
 )
+
+puts "Creating referrals..."
+
+Referral.create(
+  subject: "Would like an introduction",
+  message: "I am very interested in negotiating with pirates, but unfortunately have very little experience. Can I please get an introduction to CAROLYN MARSING?",
+
+  user: User.third,
+
+  responded: false
+)

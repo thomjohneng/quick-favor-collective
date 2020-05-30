@@ -1,0 +1,22 @@
+<% if current_user.nil? || current_user.admin == false %>
+  <p class="text-center">Oops! You're not allowed here. &#128584;</p>
+
+  <%= link_to "< back", :back %>
+<% else %>
+  <h2 class="text-center mb-4">&#128588; Referrals &#128588;</h2>
+
+  <% @referrals.each do |referral| %>
+    <div class="profile-container">
+      <div class="d-flex">
+        <p class="flex-grow-1"><strong>Name</strong>: <%= referral.first_name %> <%= referral.last_name %></p>
+        <% if (referral.created_at.to_date) > (Date.today - 7) %>
+          <p class="new-tag ml-2">NEW</p>
+        <% end %>
+      </div>
+      <p class="my-0"><strong>Email</strong>: <%= referral.email %></p>
+      <p class="my-0"><strong>Referrer</strong>: <%= referral.user.full_name %></p>
+      <p class="my-0"><strong>Date received</strong>: <%= referral.created_at.to_date %></p>
+    </div>
+  <% end %>
+
+<% end %>

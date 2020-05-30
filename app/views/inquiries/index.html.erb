@@ -10,7 +10,12 @@
   <% @inquiries.each do |inquiry| %>
     <% if inquiry.responded == false %>
       <div class="profile-container">
-        <p><strong>Subject</strong>: <%= inquiry.subject %></p>
+        <div class="d-flex">
+          <p class="flex-grow-1"><strong>Subject</strong>: <%= inquiry.subject %></p>
+          <% if (inquiry.created_at.to_date) > (Date.today - 7) %>
+            <p class="new-tag my-0 ml-2">NEW</p>
+          <% end %>
+        </div>
         <% if inquiry.message.present? %>
           <p><strong>Message</strong>: <%= inquiry.message %></p>
         <% end %>

@@ -20,7 +20,8 @@ class Users::SessionsController < Devise::SessionsController
 
   def index
     @unhide_referralnavbar = true
-    @users = User.all.all.sort_by &:first_name
+    @users = User.all.sort_by &:first_name
+    @referrals = Referral.all
 
     @industries = []
     User.all.each do |user|

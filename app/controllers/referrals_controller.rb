@@ -14,6 +14,10 @@ class ReferralsController < ApplicationController
     end
   end
 
+  def index
+    @referrals = Referral.all
+  end
+
   def show
   end
 
