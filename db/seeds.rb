@@ -8,6 +8,7 @@
 
 puts "Destroying seeds..."
 
+Inquiry.destroy_all
 Referral.destroy_all
 Favor.destroy_all
 User.destroy_all
@@ -166,6 +167,15 @@ Favor.create(
   )
 
 Favor.create(
+  favor: "Any KL food recommendations?",
+  significance: "I'm making a weekend KL trip and hear the city has BOMB food that I'd like to try!",
+  details: "If anyone has a KL restaurant/bar that they've visited, tried, and loved, please shoot me an email!",
+
+  introduction: "Passionate about shipping and negotiating with pirates",
+  user: User.second
+  )
+
+Favor.create(
   favor: "Please like and share my new YouTube video on how to nail your college essay!",
   significance: "My education consultancy is aiming to make higher education in the US/CA/UK more accessible to students/families in Indonesia - of course, this includes writing a killer essay to get into a great school, so wanted to share some advice on how to get started!",
   details: "I've provided a youtube link below to the video itself - feel free to like, share, forward, circulate to students, parents, educators, etc. to whom this might be relevant and helpful. If you think I can help beyond this video, also happy to chat directly!",
@@ -184,3 +194,45 @@ Favor.create(
   introduction: "Recently moved to Jakarta from New York to help build Zenius Education across Indonesia",
   user: User.last
   )
+
+puts "Creating inquiries..."
+
+Inquiry.create(
+  subject: "Interested to join",
+  message: "This sounds like a super cool community to be a part of. I want in.",
+
+  first_name: "Barack",
+  last_name: "Obama",
+  email: "ex.pontus@gmail.com",
+
+  responded: false
+)
+
+Inquiry.create(
+  subject: "Interested to join",
+  message: "I have SO many favors I'd like completed. Please let me in.",
+
+  first_name: "Vince",
+  last_name: "Racho",
+  email: "vince@gmail.com",
+
+  responded: true
+)
+
+Inquiry.create(
+  subject: "Would like an introduction",
+  message: "This Thom Eng guy sounds AWESOME. Can I have his numba?",
+
+  user: User.second,
+
+  responded: true
+)
+
+Inquiry.create(
+  subject: "Would like an introduction",
+  message: "I am very interested in negotiating with pirates, but unfortunately have very little experience. Can I please get an introduction to CAROLYN MARSING?",
+
+  user: User.third,
+
+  responded: false
+)

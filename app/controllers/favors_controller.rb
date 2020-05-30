@@ -17,7 +17,7 @@ class FavorsController < ApplicationController
 
   def index
     @unhide_favornavbar = true
-    @favors = Favor.all.sort_by &:created_at
+    @favors = Favor.all.sort_by(&:created_at).reverse
   end
 
   private

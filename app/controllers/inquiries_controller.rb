@@ -5,9 +5,24 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
 
     if @inquiry.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Thanks for your inquiry!"
     else
       redirect_to contact_path, notice: "Oops, think you missed a question!"
+    end
+  end
+
+  def index
+    @inquiries = Inquiry.all.sort_by(&:created_at).reverse
+  end
+
+  def update
+    @inquiry = Inquiry.find(params[:id])
+    @inquiry.responded = true
+
+    if @inquiry.save
+      redirect_to inquiries_path, notice: "Done!"
+    else
+      redirect_to inquiries_path, notice: "Oops, something went wrong."
     end
   end
 

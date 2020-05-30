@@ -20,7 +20,12 @@ cityInput.addEventListener("change", (e) => {
       row.classList.remove("inactive-row")
     } else if (row.innerHTML.includes(city) === false) {
       row.classList.add("inactive-row")
-      industryInput.value = "All industries"
+    }
+  })
+  tableRow.forEach((row) => {
+  let industry = industryInput.value
+    if (row.innerHTML.includes(industry) === false && industry != "All industries") {
+      row.classList.add("inactive-row")
     }
   })
 })
@@ -33,7 +38,12 @@ industryInput.addEventListener("change", (e) => {
       row.classList.remove("inactive-row")
     } else if (row.innerHTML.includes(industry) === false) {
       row.classList.add("inactive-row")
-      cityInput.value = "All cities"
     }
   })
-})
+  tableRow.forEach((row) => {
+  let city = cityInput.value
+    if (row.innerHTML.includes(city) === false && city != "All cities" ) {
+      row.classList.add("inactive-row")
+    }
+  })
+});

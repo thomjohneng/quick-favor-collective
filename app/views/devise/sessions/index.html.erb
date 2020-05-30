@@ -1,4 +1,7 @@
-<h2 class="mb-4 text-center">&#129308; Our Community &#129307;</h2>
+<h2 class="text-center mb-4">&#129308; Our Community &#129307;</h2>
+<% if false %>
+  <h6 class="mt-0 mb-4 text-center">We're a global network of<br><%= User.count %> members across <%= @cities.count %> cities</h6>
+<% end %>
 
 <% if current_user.admin == true %>
 
@@ -37,7 +40,6 @@
 
 <p class="text-center mb-2">Search by...</p>
 <select id="cities" name="cities" class="btn btn-block btn-secondary">
-  <option> Select city </option>
   <option> All cities </option>
   <% @cities.each do |city| %>
     <option value= <%= city %>> <%= city %> </option>
@@ -45,7 +47,6 @@
 </select>
 
 <select id="industries" name="industries" class="btn btn-block btn-secondary mb-3">
-  <option> Select industry </option>
   <option> All industries </option>
   <% @industries.each do |industry| %>
     <option value= <%= industry %>> <%= industry %> </option>
