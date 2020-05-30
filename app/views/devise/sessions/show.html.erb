@@ -38,4 +38,10 @@
 
 </div>
 
+<div class="center">
+  <% if @user != current_user && current_user.admin == false %>
+    <p>Want an introduction? Hit us up <%= link_to "here", contact_path %>.</p>
+  <% end %>
+</div>
+
 <%= link_to "< back", :back %>
