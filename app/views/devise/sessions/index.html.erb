@@ -37,14 +37,16 @@
 
 <p class="text-center mb-2">Search by...</p>
 <select id="cities" name="cities" class="btn btn-block btn-secondary">
-  <option> City </option>
+  <option> Select city </option>
+  <option> All cities </option>
   <% @cities.each do |city| %>
     <option value= <%= city %>> <%= city %> </option>
   <% end %>
 </select>
 
 <select id="industries" name="industries" class="btn btn-block btn-secondary mb-3">
-  <option> Industry </option>
+  <option> Select industry </option>
+  <option> All industries </option>
   <% @industries.each do |industry| %>
     <option value= <%= industry %>> <%= industry %> </option>
   <% end %>

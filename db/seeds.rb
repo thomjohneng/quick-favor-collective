@@ -61,6 +61,68 @@ User.create(
   )
 
 User.create(
+  email: "jeshua@gmail.com",
+  password: "password",
+  first_name: "Jeshua",
+  last_name: "John",
+  oneliner: "SF-based and working to empower workers and transform companies for the better",
+  funfact: "Suddenly very into gardening and succulents",
+  city: "San Francisco",
+  industry: "Nonprofit",
+  linkedin: "https://www.linkedin.com/in/jkj",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
+  email: "chris@gmail.com",
+  password: "password",
+  first_name: "Chris",
+  last_name: "Lew",
+  oneliner: "Works in strategy consulting for top biomedical institutions worldwide",
+  funfact: "Reports to queen Raja",
+  city: "Los Angeles",
+  industry: "Consulting",
+  linkedin: "https://www.linkedin.com/in/christopherjlew",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
+  email: "gabe@gmail.com",
+  password: "password",
+  first_name: "Gabriel",
+  last_name: "Concepcion",
+  oneliner: "Proud Googler working to make sure the information you consume is safe and accurate",
+  funfact: "Always down for a game of mahjong",
+  city: "Singapore",
+  industry: "Technology",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
+  email: "ajay@gmail.com",
+  password: "password",
+  first_name: "Ajay",
+  last_name: "Taunk",
+  oneliner: "Working in VC to cool startups in SE Asia reach scale in and make impact",
+  funfact: "Staunchly pro-Haagen Daas over Ben and Jerry's",
+  city: "Singapore",
+  industry: "Venture Capital",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
   email: "tomeng728@gmail.com",
   password: "password",
   first_name: "Thomas",

@@ -13,21 +13,27 @@ const industryInput = document.getElementById('industries')
 const tableRow = document.querySelectorAll('.userRow');
 
 cityInput.addEventListener("change", (e) => {
-  const city = cityInput.value
+  let city = cityInput.value
   tableRow.forEach((row) => {
     row.classList.remove("inactive-row")
-    if (row.innerHTML.includes(city) === false) {
+    if (city === "All cities" || city === "Select city") {
+      row.classList.remove("inactive-row")
+    } else if (row.innerHTML.includes(city) === false) {
       row.classList.add("inactive-row")
+      industryInput.value = "All industries"
     }
   })
 })
 
 industryInput.addEventListener("change", (e) => {
-  const industry = industryInput.value
+  let industry = industryInput.value
   tableRow.forEach((row) => {
     row.classList.remove("inactive-row")
-    if (row.innerHTML.includes(industry) === false) {
+    if (industry === "All industries" || industry === "Select industries") {
+      row.classList.remove("inactive-row")
+    } else if (row.innerHTML.includes(industry) === false) {
       row.classList.add("inactive-row")
+      cityInput.value = "All cities"
     }
   })
 })
