@@ -57,7 +57,7 @@ User.create(
   referrer: "Amanda Ng",
 
   admin: false,
-  verified: false
+  verified: true
   )
 
 User.create(
@@ -120,7 +120,7 @@ User.create(
   referrer: "Amanda Ng",
 
   admin: false,
-  verified: true
+  verified: false
   )
 
 User.create(
@@ -135,7 +135,7 @@ User.create(
   referrer: "Amanda Ng",
 
   admin: false,
-  verified: true
+  verified: false
   )
 
 User.create(
