@@ -8,6 +8,7 @@
 
 puts "Destroying seeds..."
 
+Referral.destroy_all
 Inquiry.destroy_all
 Referral.destroy_all
 Favor.destroy_all
@@ -158,15 +159,6 @@ User.create(
 puts "Creating favors..."
 
 Favor.create(
-  favor: "Looking for cool education-/food-/sustainability-related nonprofits in Southeast Asia to support/partner with!",
-  significance: "I'm running a social enterprise/project selling shirts to raise awareness for and financially support impactful nonprofits in the region.",
-  details: "If you know of or are in contact with any interesting nonprofits (looking for something smaller than the UNICEFs of the world) that work to solve issues in the education, food, or sustainability space, please share the name of the organization and any other details you are comfortable sharing. Even better would be an introduction to someone working there :)",
-
-  introduction: "Building Origo Edu, college admissions consultancy in Southeast Asia",
-  user: User.first
-  )
-
-Favor.create(
   favor: "Any KL food recommendations?",
   significance: "I'm making a weekend KL trip and hear the city has BOMB food that I'd like to try!",
   details: "If anyone has a KL restaurant/bar that they've visited, tried, and loved, please shoot me an email!",
@@ -193,6 +185,15 @@ Favor.create(
 
   introduction: "Recently moved to Jakarta from New York to help build Zenius Education across Indonesia",
   user: User.last
+  )
+
+Favor.create(
+  favor: "Looking for cool education-/food-/sustainability-related nonprofits in Southeast Asia to support/partner with!",
+  significance: "I'm running a social enterprise/project selling shirts to raise awareness for and financially support impactful nonprofits in the region.",
+  details: "If you know of or are in contact with any interesting nonprofits (looking for something smaller than the UNICEFs of the world) that work to solve issues in the education, food, or sustainability space, please share the name of the organization and any other details you are comfortable sharing. Even better would be an introduction to someone working there :)",
+
+  introduction: "Building Origo Edu, college admissions consultancy in Southeast Asia",
+  user: User.first
   )
 
 puts "Creating inquiries..."
@@ -240,10 +241,7 @@ Inquiry.create(
 puts "Creating referrals..."
 
 Referral.create(
-  subject: "Would like an introduction",
-  message: "I am very interested in negotiating with pirates, but unfortunately have very little experience. Can I please get an introduction to CAROLYN MARSING?",
-
-  user: User.third,
-
-  responded: false
+  first_name: "Sharon",
+  last_name: "Koharjo",
+  email: "sharon@gmail.com"
 )
