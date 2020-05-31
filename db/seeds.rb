@@ -243,5 +243,6 @@ puts "Creating referrals..."
 Referral.create(
   first_name: "Sharon",
   last_name: "Koharjo",
-  email: "sharon@gmail.com"
+  email: "sharon@gmail.com",
+  user: User.first
 )
