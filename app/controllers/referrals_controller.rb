@@ -8,7 +8,7 @@ class ReferralsController < ApplicationController
     @referral.user = current_user
 
     if @referral.save
-      redirect_to favors_path
+      redirect_to favors_path, notice: "Invite sent!"
     else
       render 'new'
     end

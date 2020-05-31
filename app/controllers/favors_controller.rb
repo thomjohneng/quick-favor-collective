@@ -9,14 +9,17 @@ class FavorsController < ApplicationController
 
 
     if @favor.save
-      redirect_to favors_path
-    else
+      redirect_to favors_path, notice: "Favor submitted! :)"
+     else
       render 'new'
     end
   end
 
   def index
-    @unhide_favornavbar = true
+    if current_user.verified == true
+      @unhide_favornavbar = true
+    end
+
     @favors = Favor.all.sort_by(&:created_at).reverse
   end
 
