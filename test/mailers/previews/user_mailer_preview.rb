@@ -7,4 +7,15 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.with(user: user).welcome
   end
 
+  def new_applicant
+    @admin_emails = []
+    User.all.each do |user|
+      if user.admin == true
+        @admin_emails << user.email
+      end
+    end
+    user = User.first
+
+    UserMailer.with(user: user).new_applicant
+  end
 end

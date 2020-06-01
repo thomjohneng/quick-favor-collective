@@ -1,0 +1,16 @@
+<p>Hey team,</p>
+<br>
+<p>A new member just registered!</p>
+<br>
+<p><strong>Name:</strong> <%= @user.full_name %></p>
+<p><strong>City:</strong> <%= @user.city %></p>
+<p><strong>Industry:</strong> <%= @user.industry %></p>
+<p><strong>Referrer:</strong> <%= @user.referrer %></p>
+<p><strong>About:</strong> <%= @user.oneliner %></p>
+<p><strong>Fun fact:</strong> <%= @user.funfact %></p>
+  <% if @user.linkedin.present? %></p>
+<p><strong>LinkedIn:</strong> <%= @user.linkedin %></p>
+<% end %>
+<p><strong>Contact:</strong> <%= @user.email %></p>
+<br>
+<p>PLEASE VERIFY ASAP!</p>

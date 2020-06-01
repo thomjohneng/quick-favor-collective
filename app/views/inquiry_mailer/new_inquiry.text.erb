@@ -1,0 +1,11 @@
+Hey team,
+
+We have a new inquiry!
+
+From: <% if @inquiry.user.present? %> <%= @inquiry.user.full_name %> <% else %><%= @inquiry.first_name %> <%= @inquiry.last_name %><% end %>
+Subject: <%= @inquiry.subject %>
+<% if @inquiry.message.present? %>
+Message: <%= @inquiry.message %>
+<% end %>
+
+Get back to <% if @inquiry.user.present? %> <%= @inquiry.user.full_name %> <% else %><%= @inquiry.first_name %> <%= @inquiry.last_name %><% end %> at <% if @inquiry.user.present? %> <%= @inquiry.user.email %> <% else %><%= @inquiry.email %><% end %> ASAP!

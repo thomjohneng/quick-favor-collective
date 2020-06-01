@@ -1,0 +1,18 @@
+Hey team,
+
+A new member just registered!
+
+Name: <%= @user.full_name %>
+City: <%= @user.city %>
+Industry: <%= @user.industry %>
+Referrer: <%= @user.referrer %>
+
+About: <%= @user.oneliner %>
+Fun fact: <%= @user.funfact %>
+
+<% if @user.linkedin.present? %>
+LinkedIn: <%= @user.linkedin %>
+<% end %>
+Contact: <%= @user.email %>
+
+PLEASE VERIFY ASAP!
