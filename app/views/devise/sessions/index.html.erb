@@ -17,6 +17,7 @@
       <th scope="col">Member</th>
       <th scope="col">Referrer</th>
       <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -29,7 +30,14 @@
               <% end %>
             </td>
             <td><%= user.full_name %></p></td>
-            <td><p><%= user.referrer %></p></td>
+            <td><p class="my-0"><%= user.referrer %></p></td>
+            <td>
+              <% if @user_names.include?(user.referrer) %>
+                <i class="fas fa-check-circle"></i>
+              <% else %>
+                <i class="fas fa-times-circle"></i>
+              <% end %>
+            </td>
             <td><%= link_to "Verify", "#" %></td>
           </tr>
       <% end %>

@@ -18,13 +18,13 @@
         <% else %>
           <p><strong>Posted by:</strong> <%= link_to favor.user.full_name, user_path(favor.user) %></p>
           <p><strong>Contact:</strong> <%= favor.user.email %></p>
-          <p><strong>Quick background:</strong> <%= favor.introduction %></p>
+          <p><strong>One-liner:</strong> <%= favor.introduction %></p>
           <p><strong>Fun fact:</strong> <%= favor.user.funfact %></p>
         <% end %>
       </div>
     <% end %>
   <% end %>
 <% else %>
-  <h4 class="text-center mb-3">Thanks for registering for the Quick Favor Collective!</h4>
+  <h4 class="text-center mb-3">Thanks for registering for the Quick Favor Club!</h4>
   <h5 class="text-center">Your account is being verified and will be activated soon. &#128522;</h5>
 <% end %>

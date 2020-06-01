@@ -1,4 +1,4 @@
-<div class="profile-container">
+<div class="profile-container pt-2">
 
 <div class="center mb-3">
   <% if false %>
@@ -7,21 +7,20 @@
 </div>
 <h2 class="mb-3 text-center"><%= @user.full_name %></h2>
 
-<p><strong>City</strong>: <%= @user.city %></p>
-<p><strong>Industry</strong>: <%= @user.industry%></p>
-<p><strong>One-liner</strong>: <%= @user.oneliner %></p>
+<p class="text-center"><i class="fas fa-home"></i> &nbsp;<%= @user.city %>  &nbsp;| &nbsp; <i class="fas fa-briefcase"></i>&nbsp; <%= @user.industry%></p>
+
+<p class="my-0"><strong>One-liner</strong>: <%= @user.oneliner %></p>
 <p><strong>Fun fact</strong>: <%= @user.funfact %></p>
 
 <% if current_user.admin == true %>
   <p><i class="fas fa-envelope"></i>  <%= @user.email %></p>
 <% end %>
-
 <% if @user.linkedin.present? %>
-  <p class="mt-0"><i class="fab fa-linkedin"></i> <a href=<%= @user.linkedin %> target="_blank">See Profile</a></p>
+  <p><i class="fab fa-linkedin"></i> <a href=<%= @user.linkedin %> target="_blank">See Profile</a></p>
 <% end %>
 
 <% if current_user.admin == true %>
-  <p><strong>Referred by</strong>: <%= @user.referrer %></p>
+  <p class="my-0"><strong>Referred by</strong>: <%= @user.referrer %></p>
 
   <p><strong>Status</strong>:
     <% if @user.verified == true %>
@@ -33,15 +32,15 @@
 <% end %>
 
 <% if @user == current_user %>
-  <%= link_to "Edit Profile", edit_user_registration_path(@user) %>
+  <%= link_to "Edit Profile", edit_user_registration_path(@user), class: "btn btn-secondary btn-block" %>
+<% end %>
+<% if @user != current_user && current_user.admin == false %>
+  <%= link_to "Want an introduction?", contact_path, class: "btn btn-primary btn-block" %>
 <% end %>
 
 </div>
 
 <div class="center">
-  <% if @user != current_user && current_user.admin == false %>
-    <p>Want an introduction? Hit us up <%= link_to "here", contact_path %>.</p>
-  <% end %>
 </div>
 
 <%= link_to "< back", :back %>

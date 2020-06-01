@@ -134,7 +134,7 @@ User.create(
   funfact: "Staunchly pro-Haagen Daas over Ben and Jerry's",
   city: "Singapore",
   industry: "Venture Capital",
-  referrer: "Amanda Ng",
+  referrer: "Vince Racho",
 
   admin: false,
   verified: false

@@ -1,23 +1,19 @@
 <h5 class="text-center mb-0">Welcome to the</h5>
-<h1 class="text-center mb-4"><strong>Quick Favor Collective!</strong></h1>
+<h1 class="text-center mb-4"><strong>Quick Favor Club</strong></h1>
+
 
 <h4 class="mb-3 text-center"><strong>&#128640; Our Mission &#128640;</strong></h4>
 
 <p class="my-1 text-center">We’re a close community of passionate do’ers looking to help each other out with quick favors!</p>
 
-<h4 class="my-3 text-center"><strong>Ground Rules</strong></h4>
+<h4 class="mt-4 mb-3 text-center"><strong>Ground Rules</strong></h4>
 
 <ul>
   <li>Reciprocation is a core value to us - please aim to complete favors for others &#127867;</li>
   <li>Any favors should be quick to fulfill & can be done from a computer or mobile device</li>
-  <li>We want to minimize spam and &#129324;. If someone just posted a favor, please wait (at least) one day before submitting a new request</li>
+  <li>We want to minimize spam and &#129324;. If someone just posted a favor, please wait one day before submitting a new request</li>
   <li>Please don’t share any job listings here &#128581;; you can, however, request introductions to potential candidates</li>
+  <li>Lastly, to protect the privacy of our members, we do not share contact info beyond your LinkedIn (should you choose to provide it). <% if user_signed_in? %>
+    If you'd like an introduction, shoot us a message <%= link_to "here", contact_path %>, and we'll connect you offline &#128521;
+    <% end %></li>
 </ul>
-
-<div class="center mt-5">
-  <% if user_signed_in? %>
-    <%= link_to "Have a potential member in mind?", new_user_referral_path(current_user), class: "btn btn-primary" %>
-  <% else %>
-    <%= link_to "Want to join?", join_path, class: "btn btn-primary" %>
-  <% end %>
-</div>

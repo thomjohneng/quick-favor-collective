@@ -12,9 +12,13 @@
   <body>
     <%= render 'shared/navbar' %>
     <%#= render 'shared/flashes' %>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <% if @home == true %>
+      <%= render 'shared/banner' %>
+    <% else %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% end %>
     <%= render 'shared/bottomnavbar' %>
     <%= javascript_include_tag 'application' %>
 

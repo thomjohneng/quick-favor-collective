@@ -14,3 +14,11 @@
     </div>
   </div>
 <% end %>
+
+<% if @unhide_joinnavbar == true %>
+  <div class="bottom-navbar">
+    <div class="center my-3">
+      <%= link_to "Interested to Join?", join_path, class: "btn btn-primary btn-block" %>
+    </div>
+  </div>
+<% end %>

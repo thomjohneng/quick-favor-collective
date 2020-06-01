@@ -23,17 +23,28 @@ class Users::SessionsController < Devise::SessionsController
     @users = User.all.sort_by &:first_name
     @referrals = Referral.all
 
+    @user_names = []
+    User.all.each do |user|
+      if user.verified == true
+        @user_names << user.full_name
+      end
+    end
+
     @industries = []
     User.all.each do |user|
       if @industries.include?(user.industry) == false
-        @industries << user.industry
+        if user.verified == true
+          @industries << user.industry
+        end
       end
     end
 
     @cities = []
     User.all.each do |user|
       if @cities.include?(user.city) == false
-        @cities << user.city
+        if user.verified == true
+          @cities << user.city
+        end
       end
     end
   end
