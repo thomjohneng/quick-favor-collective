@@ -3,6 +3,9 @@ class InquiriesController < ApplicationController
 
   def create
     @inquiry = Inquiry.new(inquiry_params)
+    if user_signed_in?
+      @inquiry.user = current_user
+    end
 
     if @inquiry.save
       redirect_to root_path, notice: "Thanks for your inquiry!"
