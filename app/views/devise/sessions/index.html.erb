@@ -14,7 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <% if user.verified == false %>
-        <tr data-link="<%= user_path(user) %>" class="userRow" >
+        <tr data-link="<%= user_path(user) %>" >
           <td class="city-industry">
             <div class="d-flex">
             <p><strong><%= user.full_name %></strong></p>
