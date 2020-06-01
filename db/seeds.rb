@@ -22,7 +22,7 @@ User.create(
   first_name: "Amanda",
   last_name: "Ng",
   oneliner: "Building Origo Edu, college admissions consultancy",
-  funfact: "Hates coffee, loves coffee ice cream",
+  funfact: "Currently very into Tostito Hint of Lime",
   city: "Singapore",
   industry: "Education",
   linkedin: "https://www.linkedin.com/in/amandalng",
@@ -188,7 +188,7 @@ Favor.create(
   )
 
 Favor.create(
-  favor: "Looking for cool education-/food-/sustainability-related nonprofits in Southeast Asia to support/partner with!",
+  favor: "Looking for cool education- /food- /sustainability-related nonprofits in Southeast Asia to support/partner with!",
   significance: "I'm running a social enterprise/project selling shirts to raise awareness for and financially support impactful nonprofits in the region.",
   details: "If you know of or are in contact with any interesting nonprofits (looking for something smaller than the UNICEFs of the world) that work to solve issues in the education, food, or sustainability space, please share the name of the organization and any other details you are comfortable sharing. Even better would be an introduction to someone working there :)",
 

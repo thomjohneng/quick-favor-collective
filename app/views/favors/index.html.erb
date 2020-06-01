@@ -17,8 +17,8 @@
           <p><strong>Posted by:</strong> You &#128169;</p>
         <% else %>
           <p><strong>Posted by:</strong> <%= link_to favor.user.full_name, user_path(favor.user) %></p>
-          <p><strong>Contact:</strong> <%= favor.user.email %></p>
-          <p><strong>One-liner:</strong> <%= favor.introduction %></p>
+          <p><i class="fas fa-envelope"></i> <%= favor.user.email %></p>
+          <p><%= favor.introduction %></p>
           <p><strong>Fun fact:</strong> <%= favor.user.funfact %></p>
         <% end %>
       </div>
