@@ -111,6 +111,22 @@ User.create(
   )
 
 User.create(
+  email: "dika@gmail.com",
+  password: "password",
+  first_name: "Dika",
+  last_name: "Lim",
+  oneliner: "Designing spaces in Southeast Asia to optimize their form, function, and your sanity",
+  funfact: "Not about me, but fun fact nonetheless: the healthy amount of almonds a day is 7",
+  city: "Jakarta",
+  industry: "Architecture",
+  linkedin: "https://www.linkedin.com/in/dikalim",
+  referrer: "Amanda Ng",
+
+  admin: false,
+  verified: true
+  )
+
+User.create(
   email: "gabe@gmail.com",
   password: "password",
   first_name: "Gabriel",
