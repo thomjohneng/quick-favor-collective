@@ -1,6 +1,6 @@
 <p>Hey there!</p>
 <br>
-<p>A new favor request just came in from <%= @favor.user.city %>-based <%= @favor.user.full_name %>!</p>
+<p><strong>A new favor request just came in from <%= @favor.user.city %>-based <%= @favor.user.full_name %>!</strong></p>
 
 <p><strong>Favor:</strong> <%= @favor.favor %></p>
 <p><strong>Significance:</strong> <%= @favor.significance %></p>
@@ -8,7 +8,7 @@
 <% if @favor.link.present? %>
    <p><strong>Link:</strong> <%= @favor.link %></p>
 <% end %>
-<p>Contact: <%= @favor.user.email %></p>
+<p><strong>Contact:</strong> <%= @favor.user.email %></p>
 
 <p><strong>More about <%= @favor.user.full_name %>:</strong> <%= @favor.introduction %></p>
 <p><strong>Fun fact:</strong> <%= @favor.user.funfact %></p>
