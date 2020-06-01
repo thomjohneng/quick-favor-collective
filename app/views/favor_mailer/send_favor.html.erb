@@ -1,0 +1,20 @@
+<p>Hey there!</p>
+<br>
+<p>A new favor request just came in from <%= @favor.user.city %>-based <%= @favor.user.full_name %>!</p>
+
+<p><strong>Favor:</strong> <%= @favor.favor %></p>
+<p><strong>Significance:</strong> <%= @favor.significance %></p>
+<p><strong>Details:</strong> <%= @favor.details %></p>
+<% if @favor.link.present? %>
+  <strong>Link:</strong> <p>@favor.link</p>
+<% end %>
+<p>Contact: <%= @favor.user.email %></p>
+
+<p><strong>More about <%= @favor.user.full_name %>:</strong> <%= @favor.introduction %></p>
+<p><strong>Fun fact:</strong> <%= @favor.user.funfact %></p>
+<br>
+<p>If you're able to help out, please pay it forward - it should be quick. :)</p>
+<br>
+<p>Cheers,</p>
+
+<p>The Quick Favor Team</p>

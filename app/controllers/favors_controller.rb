@@ -9,6 +9,7 @@ class FavorsController < ApplicationController
 
 
     if @favor.save
+      RestaurantMailer.with(favor: self).send_favor.deliver_now
       redirect_to favors_path, notice: "Favor submitted! :)"
      else
       render 'new'
