@@ -8,7 +8,7 @@ class InquiriesController < ApplicationController
     end
 
     if @inquiry.save
-      InquiryMailer.with(inquiry: self).new_inquiry.deliver_now
+      # InquiryMailer.with(inquiry: self).new_inquiry.deliver_now
       redirect_to root_path, notice: "Thanks for your inquiry!"
     else
       redirect_to contact_path, notice: "Oops, think you missed a question!"
