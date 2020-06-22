@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def about
     if user_signed_in?
-      if current_user.verified == true
+      if current_user.status == "verified"
         @unhide_favornavbar = true
       end
     else

@@ -1,0 +1,14 @@
+<p>Hey <%= @referral.first_name %>!</p>
+<br>
+<p>Your buddy <strong><%= @referral.user.full_name %></strong> has invited you to be part of the Quick Favor Club!</p>
+<br>
+<p>We’re a close community of passionate do’ers looking to help each other out with quick favors!</p>
+<br>
+<p>To join us, please sign up at <%= link_to "this link", "https://quick-favor-club.herokuapp.com/users/sign_up" %> and be sure to list <strong><%= @referral.user.full_name %></strong> as your referrer. :)</p>
+<p>If you have any trouble, feel free to reply to this email with any questions or concerns.</p>
+<br>
+<p>We're excited to have you be part of our community!</p>
+<br>
+<p>Cheers,</p>
+
+<p>The Quick Favor Team</p>

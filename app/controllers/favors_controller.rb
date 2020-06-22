@@ -17,7 +17,7 @@ class FavorsController < ApplicationController
   end
 
   def index
-    if current_user.verified == true
+    if current_user.status == "verified"
       @unhide_favornavbar = true
     end
 

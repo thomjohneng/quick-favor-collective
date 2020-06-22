@@ -1,8 +1,8 @@
 <div class="profile-container pt-2">
 
-<div class="center mb-3">
-  <% if false %>
-    <%= cl_image_tag @user.photo.key, height: 80, width: 80, crop: :fill %>
+<div class="center my-3">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, height: 85, width: 85, crop: :fill, radius: :max %>
   <% end %>
 </div>
 <h2 class="mb-3 text-center"><%= @user.full_name %></h2>
@@ -23,7 +23,7 @@
   <p class="my-0"><strong>Referred by</strong>: <%= @user.referrer %></p>
 
   <p><strong>Status</strong>:
-    <% if @user.verified == true %>
+    <% if @user.status == "verified" %>
       Verified Member
     <% else %>
       Unverified Applicant <i class="fas fa-exclamation-circle"></i>

@@ -13,7 +13,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <% if current_user.verified == true %>
+        <% if current_user.status == "verified" %>
           <li class="nav-item">
             <%= link_to "Favors", favors_path, class: "nav-link" %>
           </li>

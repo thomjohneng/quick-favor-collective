@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :oneliner, presence: true
   validates :funfact, presence: true
   validates :referrer, presence: true
+  validates :status, presence: true, inclusion: { in: ["unverified", "verified", "rejected"] }
 
   has_many :favors
   has_many :referrals

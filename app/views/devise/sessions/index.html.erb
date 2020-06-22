@@ -13,7 +13,7 @@
 <table class="table align-middle">
   <tbody>
     <% @users.each do |user| %>
-      <% if user.verified == false %>
+      <% if user.status == "unverified" %>
         <tr data-link="<%= user_path(user) %>" >
           <td class="city-industry">
             <div class="d-flex">
@@ -23,13 +23,14 @@
             <p class="mb-2"><%= user.oneliner %></p>
             <% if @user_names.include?(user.referrer) %>
               <div class="d-flex">
-                <p class="flex-grow-1"><strong>Referred by:</strong> <%= user.referrer %> <i class="fas fa-check-circle"></i></p>
-                <%= link_to "Verify", "#" %>
+                <p class="flex-grow-1"><strong>Referred by:</strong> <%= user.referrer %></p>
+                <p><i class="fas fa-check-circle"></i> member </p>
+                <%#= link_to "Verify", "#" %>
               </div>
             <% else %>
               <div class="d-flex">
-                <p class="flex-grow-1"><strong>Referred by:</strong> <%= user.referrer %> <i class="fas fa-times-circle"></i></p>
-                <%= link_to "Verify", "#" %>
+                <p class="flex-grow-1"><strong>Referred by:</strong> <%= user.referrer %></p>
+                <p><i class="fas fa-times-circle"></i> non-member</p>
               </div>
             <% end %>
           </td>
@@ -62,7 +63,7 @@
 <table class="table align-middle" id="userTable">
   <tbody>
     <% @users.each do |user| %>
-      <% if user.verified == true %>
+      <% if user.status == "verified" %>
         <tr data-link="<%= user_path(user) %>" class="userRow" >
           <td class="city-industry">
             <div class="d-flex">

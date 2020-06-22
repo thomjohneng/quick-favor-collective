@@ -8,6 +8,8 @@ class ReferralsController < ApplicationController
     @referral.user = current_user
 
     if @referral.save
+      ReferralMailer.with(referral: @referral).invite.deliver_now
+      ReferralMailer.with(referral: @referral).new_referral.deliver_now
       redirect_to favors_path, notice: "Invite sent!"
     else
       render 'new'

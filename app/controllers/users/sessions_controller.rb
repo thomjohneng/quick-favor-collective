@@ -25,7 +25,7 @@ class Users::SessionsController < Devise::SessionsController
 
     @user_names = []
     User.all.each do |user|
-      if user.verified == true
+      if user.status == "verified"
         @user_names << user.full_name
       end
     end
@@ -33,7 +33,7 @@ class Users::SessionsController < Devise::SessionsController
     @industries = []
     User.all.each do |user|
       if @industries.include?(user.industry) == false
-        if user.verified == true
+        if user.status == "verified"
           @industries << user.industry
         end
       end
@@ -42,7 +42,7 @@ class Users::SessionsController < Devise::SessionsController
     @cities = []
     User.all.each do |user|
       if @cities.include?(user.city) == false
-        if user.verified == true
+        if user.status == "verified"
           @cities << user.city
         end
       end
