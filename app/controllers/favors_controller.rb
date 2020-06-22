@@ -9,7 +9,7 @@ class FavorsController < ApplicationController
 
 
     if @favor.save
-      # FavorMailer.with(favor: self).send_favor.deliver_now
+      FavorMailer.with(favor: @favor).send_favor.deliver_now
       redirect_to favors_path, notice: "Favor submitted! :)"
      else
       render 'new'

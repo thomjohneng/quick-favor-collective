@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :referrals
   has_one_attached :photo
 
-  # after_create :send_welcome_email, :send_new_applicant_notification
+  after_create :send_welcome_email, :send_new_applicant_notification
 
   def full_name
     "#{first_name} #{last_name}"
@@ -25,11 +25,11 @@ class User < ApplicationRecord
 
   private
 
-  # def send_welcome_email
-  #   UserMailer.with(user: self).welcome.deliver_now
-  # end
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 
-  # def send_new_applicant_notification
-  #   UserMailer.with(user: self).new_applicant.deliver_now
-  # end
+  def send_new_applicant_notification
+    UserMailer.with(user: self).new_applicant.deliver_now
+  end
 end
