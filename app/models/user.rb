@@ -34,3 +34,6 @@ class User < ApplicationRecord
     UserMailer.with(user: self).new_applicant.deliver_now
   end
 end
+
+
+[ "Accounting & Tax", "Aerospace", "Agriculture & Food", "Architecture", "Art & Design", "Consumer Products", "Cybersecurity", "E-commerce", "Education", "Electronics", "Energy & Sustainability", "Financial Services", "Government & Public Sector", "Healthcare", "Internet & Telco", "Logistics", "Management Consulting", "Manufacturing", "Nonprofit", "Real estate", "Supply Chain", "Technology", "Travel & Hospitality", "Venture Capital & Private Equity", "Other" ]

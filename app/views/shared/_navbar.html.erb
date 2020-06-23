@@ -15,6 +15,9 @@
       <% if user_signed_in? %>
         <% if current_user.status == "verified" %>
           <li class="nav-item">
+            <%= link_to "About", about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Favors", favors_path, class: "nav-link" %>
           </li>
           <li class="nav-item">

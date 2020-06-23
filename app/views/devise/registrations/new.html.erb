@@ -21,7 +21,7 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :city %>
-    <%= f.input :industry %>
+    <%= f.input :industry, collection: [ "Accounting & Tax", "Aerospace", "Agriculture & Food", "Architecture", "Art & Design", "Consumer Products", "Cybersecurity", "E-commerce", "Education", "Electronics", "Energy & Sustainability", "Financial Services", "Government & Public Sector", "Healthcare", "Internet & Telco", "Logistics", "Management Consulting", "Manufacturing", "Nonprofit", "Real estate", "Supply Chain", "Technology", "Travel & Hospitality", "Venture Capital & Private Equity", "Other" ], class: "select2" %>
     <%= f.input :linkedin, label: "LinkedIn" %>
     <%= f.input :oneliner, label: "What's your one-line introduction?", :as => :text, :input_html => { 'rows' => 2}  %>
     <%= f.input :funfact, label: "Share a fun fact about yourself.", :as => :text, :input_html => { 'rows' => 2}  %>
