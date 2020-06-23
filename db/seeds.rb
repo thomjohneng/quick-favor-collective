@@ -23,8 +23,8 @@ User.create(
   last_name: "Ng",
   oneliner: "Helping to drive financial inclusion and empowerment of rural Indonesian women through a digital platform",
   funfact: "Currently very into Tostito Hint of Lime",
-  city: "Singapore",
-  industry: "Education",
+  city: "Jakarta",
+  industry: "Fintech",
   linkedin: "https://www.linkedin.com/in/amandalng",
   referrer: "Thomas Eng",
 

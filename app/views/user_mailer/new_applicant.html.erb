@@ -1,16 +1,16 @@
-<p>Hey team,</p>
-<br>
-<p>A new member just registered!</p>
-<br>
-<p><strong>Name:</strong> <%= @user.full_name %></p>
-<p><strong>City:</strong> <%= @user.city %></p>
-<p><strong>Industry:</strong> <%= @user.industry %></p>
-<p><strong>Referrer:</strong> <%= @user.referrer %></p>
-<p><strong>About:</strong> <%= @user.oneliner %></p>
-<p><strong>Fun fact:</strong> <%= @user.funfact %></p>
-  <% if @user.linkedin.present? %></p>
-<p><strong>LinkedIn:</strong> <%= @user.linkedin %></p>
+<p style='text-align: center; margin: 20px;'>Hey team,</p>
+
+<p style='text-align: center; margin: 20px;'>A new member just registered! &#128588;</p>
+
+<p style='margin: 0 20px;'><strong>Name:</strong> <%= @user.full_name %></p>
+<p style='margin: 0 20px;'><strong>City:</strong> <%= @user.city %></p>
+<p style='margin: 0 20px;'><strong>Industry:</strong> <%= @user.industry %></p>
+<p style='margin: 0 20px;'><strong>Referrer:</strong> <%= @user.referrer %></p>
+<p style='margin: 0 20px;'><strong>About:</strong> <%= @user.oneliner %></p>
+<p style='margin: 0 20px;'><strong>Fun fact:</strong> <%= @user.funfact %></p>
+  <% if @user.linkedin.present? %>
+<p style='margin: 0 20px;'><strong>LinkedIn:</strong> <%= @user.linkedin %></p>
 <% end %>
-<p><strong>Contact:</strong> <%= @user.email %></p>
-<br>
-<p>PLEASE VERIFY ASAP!</p>
+<p style='margin: 0 20px;'><strong>Contact:</strong> <%= @user.email %></p>
+
+<p style='text-align: center; margin: 20px;'><strong>Please verify ASAP!</strong></p>

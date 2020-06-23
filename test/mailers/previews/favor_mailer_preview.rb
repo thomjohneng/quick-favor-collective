@@ -5,7 +5,7 @@ class FavorMailerPreview < ActionMailer::Preview
   def send_favor
     @user_emails = []
     User.all.each do |user|
-      if user.verified == true
+      if user.status == "verified"
         @user_emails << user.email
       end
     end

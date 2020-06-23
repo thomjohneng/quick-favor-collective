@@ -1,11 +1,11 @@
-<p>Hey team,</p>
-<br>
-<p>We have a new inquiry!</p>
-<br>
-<p><strong>From:</strong> <% if @inquiry.user.present? %> <%= @inquiry.user.full_name %> <% else %><%= @inquiry.first_name %> <%= @inquiry.last_name %><% end %></p>
-<p><strong>Subject:</strong> <%= @inquiry.subject %></p>
+<p style='text-align: center; margin: 20px;'>Hey team!</p>
+
+<p style='text-align: center; margin: 20px;'>We have a new inquiry! &#128588;</p>
+
+<p style='margin: 0 20px;'><strong>From:</strong> <% if @inquiry.user.present? %> <%= @inquiry.user.full_name %> <% else %><%= @inquiry.first_name %> <%= @inquiry.last_name %><% end %></p>
+<p style='margin: 0 20px;'><strong>Subject:</strong> <%= @inquiry.subject %></p>
 <% if @inquiry.message.present? %>
-  <p><strong>Message:</strong> <%= @inquiry.message %></p>
+  <p style='margin: 20px;'><strong>Message:</strong> <%= @inquiry.message %></p>
 <% end %>
-<br>
+
 <p>Get back to <% if @inquiry.user.present? %> <%= @inquiry.user.full_name %> <% else %><%= @inquiry.first_name %> <%= @inquiry.last_name %><% end %> at <strong><% if @inquiry.user.present? %> <%= @inquiry.user.email %> <% else %><%= @inquiry.email %><% end %></strong> ASAP!</p>
