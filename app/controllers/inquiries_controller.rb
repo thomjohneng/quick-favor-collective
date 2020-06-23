@@ -9,7 +9,11 @@ class InquiriesController < ApplicationController
 
     if @inquiry.save
       InquiryMailer.with(inquiry: @inquiry).new_inquiry.deliver_now
-      redirect_to favors_path, notice: "Thanks for your inquiry!"
+      if user_signed_in
+        redirect_to favors_path
+      else
+        redirect_to root_path
+      end
     else
       redirect_to contact_path, notice: "Oops, think you missed a question!"
     end

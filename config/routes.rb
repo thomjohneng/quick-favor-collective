@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :favors, only: [ :new, :create ]
     resources :referrals, only: [ :new, :create, :show ]
   end
-  resources :referrals, only: [ :index ]
+  resources :referrals, only: [ :index, :show ]
   resources :favors, only: [ :index, :show ]
   resources :inquiries, only: [ :create, :index, :update ]
   get '/about', to: 'pages#about'

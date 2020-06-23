@@ -1,0 +1,20 @@
+<h2 class="mb-4 text-center">&#128079; Favor submitted! &#128079;</h2>
+
+<p class="center">Here's what everyone gets to see:</p>
+
+<div class="favor-container mb-3">
+  <p><strong>Favor:</strong> <%= @favor.favor %></p>
+  <p><strong>Significance:</strong> <%= @favor.significance %></p>
+  <p><strong>Details:</strong> <%= @favor.details %></p>
+  <% if @favor.link.present? %>
+    <p><strong>Link:</strong> <a href=<%= @favor.link %>>
+    <%= @favor.link %></a></p>
+  <% end %>
+  <br>
+  <p><strong>Posted by:</strong> <%= link_to @favor.user.full_name, user_path(@favor.user) %></p>
+  <p><i class="fas fa-envelope"></i> <%= @favor.user.email %></p>
+  <p><%= @favor.introduction %></p>
+  <p><strong>Fun fact:</strong> <%= @favor.user.funfact %></p>
+</div>
+
+<%= link_to "< see all favors", favors_path %>

@@ -10,7 +10,7 @@ class ReferralsController < ApplicationController
     if @referral.save
       ReferralMailer.with(referral: @referral).invite.deliver_now
       ReferralMailer.with(referral: @referral).new_referral.deliver_now
-      redirect_to favors_path, notice: "Invite sent!"
+      redirect_to referral_path(@referral)
     else
       render 'new'
     end
@@ -21,6 +21,7 @@ class ReferralsController < ApplicationController
   end
 
   def show
+    @referral = Referral.find(params[:id])
   end
 
   private

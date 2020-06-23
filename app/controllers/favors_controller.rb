@@ -10,7 +10,7 @@ class FavorsController < ApplicationController
 
     if @favor.save
       FavorMailer.with(favor: @favor).send_favor.deliver_now
-      redirect_to favors_path, notice: "Favor submitted! :)"
+      redirect_to favor_path(@favor)
      else
       render 'new'
     end
@@ -22,6 +22,10 @@ class FavorsController < ApplicationController
     end
 
     @favors = Favor.all.sort_by(&:created_at).reverse
+  end
+
+  def show
+    @favor = Favor.find(params[:id])
   end
 
   private
