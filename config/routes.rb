@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users', to: 'users/sessions#index'
     get '/users/:id', to: 'users/sessions#show'
-    patch '/users/:id', to: 'users/sessions#verify'
+    patch '/users/:id', to: 'users/registrations#verify'
+    put '/users/:id', to: 'users/registrations#reject'
   end
 
   root to: 'pages#home'
